@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: testrun-after-cert-change
+  labels:
+    app: testrun-after-cert-change
+  annotations:
+    backstage.io/kubernetes-id: testrun-after-cert-change
+spec:
+  type: ClusterIP
+  selector:
+    app: testrun-after-cert-change
+  ports:
+    - port: 8080
+      protocol: TCP
+      name: http
